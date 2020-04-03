@@ -43,7 +43,7 @@ pessoa.andar = function(metros) {
 
      return "Olá," + `${artigo}` + `${pessoa.nome}` + " " + `${pessoa.sobrenome}` + 
         ", tenho " + `${pessoa.idade}` + anos + ", " + `${pessoa.altura}` +
-        ", meu peso é " + `${pessoa.peso}` + "kg e, só hoje, eu já caminhei " +
+        "m, meu peso é " + `${pessoa.peso}` + "kg e, só hoje, eu já caminhei " +
         `${pessoa.caminhouQuantosMetros}` + metros + "!";
 
  }
