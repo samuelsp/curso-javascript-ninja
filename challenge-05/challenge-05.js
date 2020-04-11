@@ -58,36 +58,34 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-function book(book) {
+function book( bookName ) {
     var books = 
         {
-          book1 :
+
+            'Quando Nietzsche Chorou':
             {
-                titulo: 'Quando Nietzsche Chorou',
                 quantidadePaginas: 230,
                 autor: "Irvin D. Yalom",
                 editora: "Ediouro"
             },
 
-         book2 :
+            'Memórias Do Subsolo':
             {
-                titulo: 'Memórias Do Subsolo',
                 quantidadePaginas: 500,
                 autor: "Fiodor Dostoiévski",
                 editora: "editora34"
             },
          
-           book3 :
+            'O Mundo De Sofia':
             {
-                titulo: 'O Mundo De Sofia',
                 quantidadePaginas: 124,
                 autor: "Jostein Gaarder",
                 editora: "SEGUINTE"
             }     
         }    
 
-    if (book !== undefined)
-        return book;
+    if ( !!bookName )
+        return books[bookName];
 
     return books;
 }
@@ -102,19 +100,21 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// 
-console.log("O livro", book().book1.titulo,"tem", book().book1.quantidadePaginas,"páginas!");
+var bookName = 'Quando Nietzsche Chorou';
+console.log("O livro", bookName,"tem", book(bookName).quantidadePaginas, "páginas!");
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log("O autor do livro", book().book2.titulo, "é", book().book2.autor + ".")
+bookName = 'O Mundo De Sofia';
+console.log("O autor do livro", bookName, "é", book(bookName).autor + ".")
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log("O livro", book().book1.titulo, "foi publicado pela editora", book().book1.editora + ".");
+bookName = 'Memórias Do Subsolo';
+console.log("O livro", bookName, "foi publicado pela editora", book(bookName).editora +".");
 
 // ?
