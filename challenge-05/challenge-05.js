@@ -23,7 +23,7 @@ no primeiro parâmetro. O índice usado para retornar o valor, deve ser o númer
 segundo parâmetro.
 */
 function fnArrayIndex(array, index) {
-    if (index !== undefined)
+    if ( index !== undefined )
         return array[index];
     return array;
 }
