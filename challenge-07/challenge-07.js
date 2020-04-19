@@ -33,7 +33,7 @@ Mostre no console quantos itens tem o primeiro array criado, com a frase:
 "O primeiro array tem [QUANTIDADE DE ITENS] itens."
 */
 
-console.log('O primeiro array tem', arr[4].length, 'itens.');
+console.log('O primeiro array tem', arr.length, 'itens.');
 
 /*
 Agora mostre no console quantos itens tem o segundo array criado, com a frase:
