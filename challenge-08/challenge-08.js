@@ -59,29 +59,38 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
 */
 
 function calculator(operator) {
-  switch(operator) {
-    case '+':      
-      return function(n1, n2) { 
-        return n1 + n2 
-      }; 
-    case '-':
-      return function(n1, n2) { 
-        return n1 - n2 
-      }; 
-    case '*':
-      return function(n1, n2) { 
-        return n1 * n2 
-      }; 
-    case '/':
-      return function(n1, n2) { 
-        return n1 / n2 
-      }; 
-    case '%':
-      return function(n1, n2) { 
-        return n1 % n2 
-      }; 
-    default:
-      return 'Operador Inválido!';
+  
+  return function(n1, n2) {    
+    
+    var result;    
+    
+    switch(operator) {
+      case '+': 
+        result = n1 + n2;
+      break;
+      
+      case '-':
+        result = n1 - n2;
+      break; 
+      
+      case '*':
+        result = n1 * n2;
+      break; 
+      
+      case '/':
+        result = n1 / n2 
+      break;
+      
+      case '%':
+        result = n1 % n2 
+      break;
+      
+      default:
+        return 'Operador Inválido!';
+    }
+
+    return `Resultado da operação: ${n1} ${operator} ${n2} = ${result}.`
+  
   }
   
 }
