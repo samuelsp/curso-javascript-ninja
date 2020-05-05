@@ -11,7 +11,7 @@ correto da variável ou função chamada.
 */
 
     (function() {
-        
+
            function myFunction() {
             var number1 = 10;
             var number2 = 20;
@@ -116,4 +116,4 @@ chamada.
 // ?
 
         console.log( 'O resto da divisão é:', mod((n1, n2) => {return n1 % n2}));
-    })();
+    }());
