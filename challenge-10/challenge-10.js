@@ -140,37 +140,37 @@
         a mensagem de erro será mostrada no console.
         */
        operationSignal = '-';
-       subtraction = calculator(operationSignal);
+       subtraction = isOperatorValid(operationSignal) ? calculator(operationSignal) : false;
        
-       subtraction = typeof subtraction === "function"
+       subtraction = subtraction
             ? console.log( showOperationMessage(operationSignal, number1, number2), subtraction(number1, number2) )  
             : console.log( showErrorMessage(operationSignal) );
                 
         operationSignal = '*';
-        var multiplication = calculator(operationSignal);
+        multiplication = isOperatorValid(operationSignal) ? calculator(operationSignal) : false;
         
-        multiplication = typeof multiplication === "function"
+        multiplication = multiplication
             ? console.log( showOperationMessage(operationSignal, number1, number2), multiplication(number1, number2) )  
             : console.log( showErrorMessage(operationSignal) );
             
         operationSignal = '/';
-        division = calculator(operationSignal);
+        division = isOperatorValid(operationSignal) ? calculator(operationSignal) : false;
         
-        division = typeof division === "function"
+        division = division
             ? console.log( showOperationMessage(operationSignal, number1, number2), division(number1, number2) )  
             : console.log( showErrorMessage(operationSignal) );
         
         operationSignal = '%';
-        mod = calculator(operationSignal);
+        mod = isOperatorValid(operationSignal) ? calculator(operationSignal) : false;
             
-        mod = typeof mod === "function"
+        mod = mod
             ? console.log( showOperationMessage(operationSignal, number1, number2), mod(number1, number2) )  
             : console.log( showErrorMessage(operationSignal) );
         
         operationSignal = '$';
-        var operationInvalid = calculator(operationSignal);
+        var operationInvalid = isOperatorValid(operationSignal) ? calculator(operationSignal) : false;
 
-        operationInvalid = typeof operationInvalid === "function"
+        operationInvalid = operationInvalid
             ? console.log( showOperationMessage(operationSignal, number1, number2), operationInvalid(number1, number2) )  
             : console.log( showErrorMessage(operationSignal) );
 
