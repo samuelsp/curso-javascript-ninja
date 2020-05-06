@@ -13,7 +13,7 @@
     var five = Number('5');
     console.log( five + ' é número?', typeof five === 'number' );
 
-    var concat = String(10 + 10);
+    var concat = String(10) + 10;
     console.log( '"' + concat + '" é uma string? E é igual a "1010"?', typeof concat === 'string' );
 
     /*
@@ -45,7 +45,8 @@
     - O desafio é fazer o retorno sem usar "if" ou "switch".
     */
     function isOperatorValid(operator) {
-        return String("%/*+-").includes(String(operator));
+        return typeof operation[operator] === "function";
+        // !!operation[operator] || operation[operator] !== undefined
     }
 
     /*
@@ -121,12 +122,9 @@
     - O segundo, a função de soma, passando os dois operandos.
     - Se "sum" for "false", mostrar no console a mensagem de erro.
     */
-    var number1 = 40,
-        number2 = 2,
-    
-        sum = !!sum
-            ? console.log( showOperationMessage(operationSignal, number1, number2), sum(number1, number2) )  
-            : console.log( showErrorMessage(operationSignal) );
+    sum = !!sum
+        ? ( number1 = 40, number2 = 2, console.log( showOperationMessage(operationSignal, number1, number2), sum(number1, number2) ) )  
+        : console.log( showErrorMessage(operationSignal) );
     /*
     Repita desde o "PASSO 2" com as operações de subtração, multiplicação,
     divisão e resto. Crie variáveis com os nomes "subtraction",
@@ -177,3 +175,4 @@
             : console.log( showErrorMessage(operationSignal) );
 
 })();
+
