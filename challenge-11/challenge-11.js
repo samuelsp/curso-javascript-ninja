@@ -1,4 +1,4 @@
-(function (){ 
+(function () { 
     // Envolva todo o código desse arquivo em uma IIFE (incluindo esse comentário).
 
     /*
@@ -37,7 +37,7 @@
     'The person has [COUNTER] properties'
     */
     var counter = 0;
-    for( prop in person ) {
+    for( var prop in person ) {
         console.log(`The ${prop} of person is ${person[prop]}. `);
         counter++;
     }
