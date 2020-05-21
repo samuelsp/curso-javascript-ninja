@@ -16,14 +16,26 @@
     Cada array deve conter os estados dessa região.
     */
     var sul,
-        sudeste = [];
-    sul = ['Rio Grande do Sul', 'Paraná', 'Santa Catarina'];
-    sudeste = ['São Paulo', 'Rio de Janeiro', 'Minas Gerais', 'Espirito Santo'];
+        sudeste = []; 
+    
+    sul = [
+        'Rio Grande do Sul', 
+        'Paraná', 
+        'Santa Catarina'
+    ];
+    
+    sudeste = [
+        'São Paulo', 
+        'Rio de Janeiro', 
+        'Minas Gerais', 
+        'Espirito Santo'
+    ];
     /*
     Crie uma variável chamada `brasil`, que irá receber as duas regiões
     concatenadas. Mostre o `brasil` no console.
     */
-    var brasil = sudeste.concat(sul);
+    var brasil = sul.concat(sudeste);
+    
     console.log( '\nAlguns Estados do Brasil:' );
     console.log(brasil);
 
@@ -31,6 +43,7 @@
     Adicione 3 novos estados da região Norte no início do array e mostre no console.
     */
     console.log( '\nMais estados adicionados:' );
+    
     brasil.unshift('Amazonas','Pará','Rondônia');
     console.log(brasil);
 
@@ -44,7 +57,7 @@
     Crie um novo array chamado `newSul`, que receba somente os estados do sul,
     pegando do array `brasil`. Não remova esses itens de `brasil`.
     */
-    var newSul = brasil.slice(6);
+    var newSul = brasil.slice(2, 5);
     
     /*
     Mostre no console os estados que estão em `newSul`.
@@ -61,7 +74,7 @@
     /*
     Crie um novo array chamado `nordeste`, que tenha os estados do nordeste.
     */
-    var nordeste = brasil.slice(0, 2);
+    var nordeste = ['Alagoas', 'Bahia', 'Ceará', 'Maranhão', 'Paraíba', 'Pernambuco', 'Piauí', 'Rio Grande do Norte', 'Sergipe'];
 
     /*
     Mostre no console os estados do nordeste.
@@ -73,13 +86,12 @@
     Remova de `brasil` os estados do `sudeste`, colocando-os em uma variável
     chamada `newSudeste`.
     */
-    var newSudeste = brasil.splice(2, 4);
+    var newSudeste = brasil.splice(5, 4);
 
     /*
     Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem
     ficar no mesmo nível que os estados já existentes, não em um array separado.
     */
-    var nordeste = ['Alagoas', 'Bahia', 'Ceará', 'Maranhão', 'Paraíba', 'Pernambuco', 'Piauí', 'Rio Grande do Norte', 'Sergipe'];
     brasil = brasil.concat(nordeste);
 
     /*
@@ -106,7 +118,7 @@
         newBrasil.push({
             id: indice,
             estado: estado
-        })
+        });
     });
 
     /*
@@ -130,9 +142,10 @@
         return estado.length > 7;
     });
     
-    console.log(hasAllSevenLetter ? 
-            "Sim, todos os estados tem mais de 7 letras!" : 
-            "Nem todos os estados tem mais de 7 letras!"
+    console.log(
+        hasAllSevenLetter 
+        ? "Sim, todos os estados tem mais de 7 letras!" 
+        : "Nem todos os estados tem mais de 7 letras!"
      );    
 
     /*
@@ -151,10 +164,10 @@
 
     console.log('\nCeará está incluído em `brasil`?' );
     console.log(
-        stateIncluded ?
-            "Ceará está incluído!" :
-            "Ceará não foi incluído :("
-        )
+        stateIncluded 
+        ? "Ceará está incluído!" 
+        : "Ceará não foi incluído :("
+    );
 
     /*
     Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
