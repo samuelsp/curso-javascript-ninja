@@ -10,18 +10,11 @@
     Os números devem ser de 1 a 10.
     Mostre esse array no console.
     */
-    var numberObjects = [
-        {'number' : 1},
-        {'number' : 2},
-        {'number' : 3},
-        {'number' : 4},
-        {'number' : 5},
-        {'number' : 6},
-        {'number' : 7},
-        {'number' : 8},
-        {'number' : 9},
-        {'number' : 10}
-    ]
+    var numberObjects = [ ];
+    for(let i = 1; i <= 10; i++ ) {
+        numberObjects.push( { number : i });
+    }
+    
     console.log( 'Number Objects Array:' );
     console.log(numberObjects);
     /*
@@ -29,8 +22,9 @@
     números do array criado acima. Mostre esse novo array no console.
     */
     var justNumbers = [];
-    numberObjects.forEach(function(obj){
-        justNumbers.push(obj['number']);
+    
+    justNumbers = numberObjects.map( function( obj ){
+        return obj.number;
     });
     
     console.log( '\nJust Numbers:' );
@@ -80,7 +74,7 @@
     infantil, onde você coloca a letra "P" antes de cada sílaba de uma palavra
     falada, como se você estivesse falando em código xD
     */
-    var name = ['S','a','m','u','e','l'];
+    var name = ['Sa','mu','el'];
     console.log( '\nSeu nome na língua do "P":' );
     var nameP = name.reduce(function(acum, letter) {
         return (acum + 'P') + letter;
@@ -113,7 +107,7 @@
     o que acontece ;)
     */
     console.log( '\nExiste um { number: 2 } em numberObjects?' );
-    var hasNumberObjects = numberObjects.map(function(n){ return n.number }).indexOf(2) !== -1;
+    var hasNumberObjects = numberObjects.map(function(n){ return n.number }).indexOf(2) > -1;
     if(hasNumberObjects) {
         console.log("Existe um objeto { number: 2 } em numberObjects!")
     }
@@ -125,7 +119,7 @@
     Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
     será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
     */
-    hasNumberObjects = numberObjects.map(function(n) { return n.number }).lastIndexOf(2) !== -1;
+    hasNumberObjects = numberObjects.map(function(n) { return n.number }).lastIndexOf(2) > -1;
     console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
     if(hasNumberObjects) {
         console.log("Sim!")
