@@ -35,18 +35,18 @@
     var fullName = 'samuel-silva-pereira-da-cunha';
     
     console.log( '\nNome convertido à partir de um slug:' );
-    console.log(fullName);
     
     var fullNameFiltered = fullName.split('-').map(function(word) {
         //return word.charAt(0).toUpperCase() + word.substring(1);
         return word[0].toUpperCase() + word.slice(1);
-    });
-
+    }).join(' ');
+    
     // var fullNameFiltered = fullName.split('-');
     // for(var j = 0; j < fullNameFiltered.length; j++) {
     //     fullNameFiltered[j] = fullNameFiltered[j].charAt(0).toUpperCase() + fullNameFiltered[j].slice(1);
     // }
-    console.log(fullNameFiltered.join(' '));
+    console.log(fullName);
+    console.log(fullNameFiltered);
 
     /*
     - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
@@ -58,9 +58,17 @@
     5 nomes foi somente uma sugestão ;)
     */
     var nomes = ['João', 'Maria', 'Lucas', 'Paulo', 'Tiago'];
-    var frase = nomes.join(', ');
+    var frase = '';
+    frase = nomes.join(', ');
     frase = frase.substring(0, frase.lastIndexOf(',')) + frase.substring(frase.lastIndexOf(',')).replace(',', ' e');
     frase += ' são meus amigos.';
+
+    // var separator = '';
+    // frase = nomes.reduce(function(acumulado, atual, index) {
+    //     separator = nomes.length - 1 === index ? ' e ' : ', ';
+    //     return acumulado + separator + atual;
+    // }).concat(' são meus amigos.');
+
     console.log( '\nMeus amigos:' );
     console.log(frase);
 
@@ -70,6 +78,7 @@
     */
     console.log( '\nEra "Roberto", agora é:' );
     var nome = 'Roberto';
+    //nome = nome.replace('to', 'ta');
     nome = nome.slice(0, nome.lastIndexOf('o')) + nome.slice(nome.lastIndexOf('o')).replace('o', 'a');
     console.log(nome);
 
